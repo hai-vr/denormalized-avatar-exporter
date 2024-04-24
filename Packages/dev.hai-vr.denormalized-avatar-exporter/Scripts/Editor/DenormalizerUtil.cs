@@ -26,8 +26,6 @@ namespace HaiDenormalizedAvatarExporter.Editor
             CreateChain(boneToParallel, RightRingDistal, RightRingIntermediate, RightRingProximal, RightHand);
             CreateChain(boneToParallel, RightLittleDistal, RightLittleIntermediate, RightLittleProximal, RightHand);
             
-            CreateChain(boneToParallel, RightLittleDistal, RightLittleIntermediate, RightLittleProximal, RightHand);
-
             OptionallyLinkTo(boneToParallel, LeftEye, Head);
             OptionallyLinkTo(boneToParallel, RightEye, Head);
             OptionallyLinkTo(boneToParallel, Jaw, Head);

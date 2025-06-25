@@ -140,7 +140,10 @@ namespace HaiDenormalizedAvatarExporter.Editor
             {
                 var hipsParent = hips.parent;
                 if(hipsParent != null)
+                {
+                    humanoidBoneTransforms.Add(hipsParent);
                     humanoidBoneNames.Add(hipsParent.name);
+                }
             }
             
             foreach (var t in copy.GetComponentsInChildren<Transform>(true))

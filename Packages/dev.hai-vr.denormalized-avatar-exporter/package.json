@@ -1,7 +1,7 @@
 {
   "name": "dev.hai-vr.denormalized-avatar-exporter",
-  "displayName": "Haï ~ Denormalized Avatar Exporter (Beta)",
-  "version": "1.0.0",
+  "displayName": "Haï ~ Denormalized Avatar Exporter",
+  "version": "1.1.0-alpha.1",
   "unity": "2019.4",
   "description": "Denormalized Avatar Exporter https://docs.hai-vr.dev/docs/products/denormalized-avatar-exporter",
   "author" : {
@@ -9,5 +9,7 @@
   },
   "vpmDependencies": {
   },
-  "url" : "https://docs.hai-vr.dev/docs/products/denormalized-avatar-exporter"
+  "url" : "https://docs.hai-vr.dev/docs/products/denormalized-avatar-exporter",
+  "documentationUrl": "https://docs.hai-vr.dev/docs/products/denormalized-avatar-exporter",
+  "changelogUrl": "https://docs.hai-vr.dev/docs/changelogs/denormalized-avatar-exporter"
 }

@@ -134,6 +134,18 @@ namespace HaiDenormalizedAvatarExporter.Editor
 
             var humanoidBoneNames = new HashSet<string>(boneToParallel.Values.Where(transform => transform != null).Select(transform => transform.name));
             var humanoidBoneTransforms = new HashSet<Transform>(boneToParallel.Values.Where(transform => transform != null));
+            
+            // Fixes having an object with the same name as the hips parent (armature) hijacking the rotation values of the original hips parent (armature).
+            if(boneToParallel.TryGetValue(Hips, out var hips))
+            {
+                var hipsParent = hips.parent;
+                if(hipsParent != null)
+                {
+                    humanoidBoneTransforms.Add(hipsParent);
+                    humanoidBoneNames.Add(hipsParent.name);
+                }
+            }
+            
             foreach (var t in copy.GetComponentsInChildren<Transform>(true))
             {
                 var thatName = t.name;

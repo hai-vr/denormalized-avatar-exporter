@@ -30,6 +30,11 @@
             "name": "nadena.dev.ndmf",
             "expression": "",
             "define": "HVSFEXPORTER_NDMF_IS_INSTALLED"
+        },
+        {
+            "name": "app.warudo.modtool",
+            "expression": "0.14.3",
+            "define": "HVSFEXPORTER_WARUDO_0_14_3_OR_ABOVE_IS_INSTALLED"
         }
     ],
     "noEngineReferences": false

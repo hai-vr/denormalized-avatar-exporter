@@ -1,6 +1,6 @@
-﻿#if UNITY_2021
-// Hack: There is no Warudo scripting define, and Warudo is not a package,
-// so we can't use a versionDefines entry in the asmdef
+﻿#if UNITY_2021 || HVSFEXPORTER_WARUDO_0_14_3_OR_ABOVE_IS_INSTALLED
+// Hack: There is no Warudo package and scripting define in OLD VERSIONS of Warudo,
+// so we weren't able to use a versionDefines entry in the asmdef
 #define WARUDO_IS_INSTALLED
 #endif
 using System.Linq;
@@ -174,7 +174,11 @@ namespace HaiDenormalizedAvatarExporter.Editor
             var avatarDescription = AvatarDescription.Create();
             avatarDescription.SetHumanBones(rebuiltDict);
 
+#if HVSFEXPORTER_WARUDO_0_14_3_OR_ABOVE_IS_INSTALLED
+            var avatarAsset = avatarDescription.CreateAvatarAndSetup(copy.transform);
+#else
             var avatarAsset = avatarDescription.CreateAvatar(copy.transform);
+#endif
             avatarAsset.name = "AvatarAsset.Normalized";
 
             // Directly setting the avatar causes issues (the skinned meshes become completely deformed)

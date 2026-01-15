@@ -175,7 +175,7 @@ namespace HaiDenormalizedAvatarExporter.Editor
             avatarDescription.SetHumanBones(rebuiltDict);
 
 #if HVSFEXPORTER_WARUDO_0_14_3_OR_ABOVE_IS_INSTALLED
-            var avatarAsset = avatarDescription.CreateAvatarAndSetup(copy.transform);
+            var avatarAsset = HumanoidLoader.BuildHumanAvatarFromMap(copy.transform, avatarDescription.ToHumanoidMap(copy.transform));
 #else
             var avatarAsset = avatarDescription.CreateAvatar(copy.transform);
 #endif

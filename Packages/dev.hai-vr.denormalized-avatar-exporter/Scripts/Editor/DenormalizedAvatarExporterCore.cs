@@ -174,7 +174,7 @@ namespace HaiDenormalizedAvatarExporter.Editor
             var avatarDescription = AvatarDescription.Create();
             avatarDescription.SetHumanBones(rebuiltDict);
 
-            var avatarAsset = avatarDescription.CreateAvatar(copy.transform);
+            var avatarAsset = avatarDescription.CreateAvatarAndSetup(copy.transform);
             avatarAsset.name = "AvatarAsset.Normalized";
 
             // Directly setting the avatar causes issues (the skinned meshes become completely deformed)
